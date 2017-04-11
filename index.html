@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+  <title>Video Playlist</title>
+</head>
+<link href="styles.css" rel="stylesheet" type="text/css"/>
+<link href="bootstrap.css" rel="stylesheet" type="text/css"/>
+<body ng-app="play" ng-controller="playcontrol">
+<div>
+<b><label for="Start Time" step=0.01>Start Time:</label></b>
+<input ng-model="startTime" type="number"></input>
+<b><label for="End Time">End Time:</label></b>
+<input ng-model="endTime" type="number" step="0.01"></input>
+<b><label for="Url">URL</label></b>
+<input ng-model="url" placeholder=" Paste your url here"></input>
+<b><label for="Title">Title</label></b>
+<input ng-model="title" placeholder="Place a title for your video"></input>
+<button type="button" class="btn btn-primary" ng-click="addToList();">Add To My List</button>
+
+<button type="button" class="btn btn-warning" ng-click="dispCache();">Display List</button>
+</div>
+<div  class="dispList">
+<table>
+ <tr ng-repeat="x in dispLst" ng-click="dispVid();">
+  <td>{{ x }}</td>
+</tr>
+</table>
+</div>
+<div id="playVid">
+  <video width="320" height="240" controls>
+    <source src="{{ videoDisp }}" type="video/mp4">
+  </video>
+</div>
+<script src="angular.js"></script>
+<script src="bootstrap.js"></script>
+<script src="maincontroller.js"></script>
+
+</body>
+</html>

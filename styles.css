@@ -1,0 +1,12 @@
+body{
+  margin:0px;
+}
+.dispList {
+
+ position: relative;
+ height: 100vh;
+ float: right;
+ width: 50vh;
+ border: solid;
+ border-color: black;
+}
